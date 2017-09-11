@@ -15,7 +15,7 @@ if($type=='view') {
 
 	$content = file_get_contents($file);
 	echo $content;
-} else {
+} else { // type=download
 	header('Content-Type: application/octet-stream');
 	header('Content-Disposition: attachment; filename='.basename($file));
 	header('Expires: 0');

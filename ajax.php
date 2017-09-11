@@ -8,18 +8,23 @@ $data = $_POST;
 $output = ['success'=>false];
 $cmd = [__DIR__ .'/bin/winApp.exe'];
 
+// get all params from browser
 foreach ($data as $key => $value) {
 	if($value) $cmd[] = '"'.trim(preg_replace('/\s\s+/', ' ', $value)).'"';
 }
 $cmd = implode(" ",$cmd);
+// Excute file winApp.exe
 shell_exec($cmd);
+// sleep to make sure file created success before find file
 sleep(1);
 
-// Find file 
+// Find file newest
 $files = array();
 foreach (glob("bin/*.{txt}", GLOB_BRACE) as $filename) {
     $files[basename($filename)] = filemtime($filename);
 }
+
+
 if(count($files)) {
 	arsort($files);
 	reset($files);
