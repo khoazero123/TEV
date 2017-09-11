@@ -1,0 +1,15 @@
+.container {
+	margin-top: 20px;
+}
+
+.container #result {
+	margin-top: 30px;
+}
+
+.container #result button>a {
+	color: white;
+	text-decoration: none;
+}
+.container .progress {
+	margin-top: 30px;
+}
