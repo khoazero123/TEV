@@ -59,6 +59,6 @@ include('config.php');
 				</div>
 			</div>
 		</div>
-		<script src="js/script.js"></script>
+		<script src="js/script.js?v=<?php echo filemtime(__DIR__ .'/js/script.js');?>"></script>
 	</body>
 </html>

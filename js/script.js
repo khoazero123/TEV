@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 	myForm.submit(function(e) {
 		e.preventDefault();
-		$('#result .panel-heading').text('Server đang xy lý. Xin vui lòng đợi trong giây lát.');
+		$('#result .panel-heading').text('Server đang xử lý. Xin vui lòng đợi trong giây lát.');
 		$('button[type="submit"]',myForm).prop('disabled', true);
 		$('#result').find('button').attr('disabled','disabled');
 		$('.progress-bar').removeClass().addClass("progress-bar progress-bar-striped active");
