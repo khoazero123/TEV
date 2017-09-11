@@ -27,12 +27,12 @@ $(document).ready(function() {
 			if(!data.success) {
 				$('#result .panel').removeClass().addClass("panel panel-danger");
 				$('#btn-download, #btn-view',myForm).prop('disabled', true);
-				$('#result .panel-heading').text('Oh snap! Change a few things up and try submitting again.');
+				$('#result .panel-heading').text('Có lỗi xảy ra. File chưa được tạo.');
 
 				$('.progress-bar').removeClass().addClass("progress-bar progress-bar-danger progress-bar-striped");
 			} else {
 				$('#result .panel').removeClass().addClass("panel panel-success");
-				$('#result .panel-heading').text('Well done! You successfully read this important alert message.');
+				$('#result .panel-heading').text('File đã tạo xong, nhấn nút Download hoặc View để xem.');
 
 				$('#btn-download, #btn-view',myForm).removeAttr('disabled');
 
