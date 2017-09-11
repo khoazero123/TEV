@@ -14,6 +14,8 @@ foreach ($data as $key => $value) {
 $cmd = implode(" ",$cmd);
 shell_exec($cmd);
 sleep(1);
+
+// Find file 
 $files = array();
 foreach (glob("bin/*.{txt}", GLOB_BRACE) as $filename) {
     $files[basename($filename)] = filemtime($filename);
@@ -27,7 +29,6 @@ if(count($files)) {
 	$output['urldownload'] = SITEURL.'/action.php?type=download&file='.$filename;
 	$output['success'] = true;
 }
-//$output['success'] = true;
-//var_dump($output);exit;
+
 echo json_encode($output,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
 ?>

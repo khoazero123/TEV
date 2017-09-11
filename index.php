@@ -13,7 +13,7 @@ include('config.php');
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
 		<script type="text/javascript">
-			var maxSecond = <?php echo isset($config['maxSecond']) ? (int)$config['maxSecond'] : 3; ?>;
+			var maxSecond = <?php echo $config['maxSecond']; ?>;
 		</script>
 	</head>
 	<body>

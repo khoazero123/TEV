@@ -5,7 +5,6 @@ $(document).ready(function() {
 	myForm.submit(function(e) {
 		e.preventDefault();
 		$('button[type="submit"]',myForm).prop('disabled', true);
-		//$('#btn-download, #btn-view',myForm).prop('disabled', true);
 		$('#result').find('button').attr('disabled','disabled');
 		$('.progress-bar').removeClass().addClass("progress-bar progress-bar-striped active");
 
@@ -41,22 +40,12 @@ $(document).ready(function() {
 
 				var win;
 				if(data.urldownload) {
-					$('#result #btn-download').prop('disabled', false).click(function() {
-						win = window.open(data.urldownload, '_blank');
-						win.focus();
-					});
+					$('#result #btn-download').prop('disabled', false).html('<a href="'+ data.urldownload +'" target="_blank">Download</a>');
 				}
 				if(data.urlview) {
 					$('#result #btn-view').prop('disabled', false).html('<a href="'+ data.urlview +'" target="_blank">View</a>');
-					$('#result #btn-view').prop('disabled', false).click(function() {
-						// Can not open new tap when View file
-						//win = window.open(data.urlvew, '_blank');
-						//win.focus();
-					});
 				}
 			}
-			//$('#result').show();
-			//$('#result').html(html);
 			$('button[type="submit"]',myForm).prop('disabled', false);
 		});
 	});
